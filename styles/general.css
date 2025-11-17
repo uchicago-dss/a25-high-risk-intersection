@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'SN Pro';
+  src: url('SNPro/SNPro-VariableRegular.woff2') format('woff2');
+  font-weight: 200 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SN Pro';
+  src: url('SNPro/SNPro-VariableItalic.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-style: italic;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 72px;
+}
+
+body {
+  margin: 0;
+  height: 1000px;
+}
+
+h1 {
+  font-family: 'SN Pro';
+  font-weight: 500;
+  font-size: 96px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: 'SN Pro';
+  font-weight: 700;
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+p,
+a {
+  font-family: 'SN Pro';
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+a:active {
+  opacity: 0.5;
+}
+
+a.in-text,
+a.in-text:visited {
+  color: rgb(138, 90, 68);
+  text-decoration: none;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid rgb(254, 200, 154);
+  border-radius: 1px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 24px;
+  background-image: linear-gradient(to bottom, rgb(254, 200, 154), orange);
+  color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+.red {
+  color: rgb(231, 111, 81);
+}

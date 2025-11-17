@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>High-Risk Intersections</title>
+
+    <!-- css files -->
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/body.css" />
+    <link rel="stylesheet" href="styles/buttons.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <div class="nav-left">
+        <p class="logo">DSS</p>
+        <p></p>
+      </div>
+
+      <div class="nav-right">
+        <div class="section">
+          <a class="nav-link" href="#hero">HOME</a>
+        </div>
+        <div class="section">
+          <a class="nav-link" href="#findings">FINDINGS</a>
+        </div>
+        <div class="section">
+          <a class="nav-link" href="#data">DATA</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero" id="hero">
+      <div class="hero-center">
+        <h1>High-Risk</h1>
+        <h1 class="red">Intersections</h1>
+        <p>Data Science Society</p>
+        <div class="hero-btns">
+          <button class="btn1" onclick="location.href='#findings';">Read More</button>
+          <button
+            class="btn2"
+            onclick="window.open('https://github.com/uchicago-dss/a25-high-risk-intersection', '_blank');"
+            target="_blank"
+          >
+            Source Code
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="content" id="findings">
+      <div class="content-left">
+        <div class="box">
+          <iframe
+            src="plots/crashes_chart.html"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            style="border: none"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="content-right">
+        <p>description</p>
+      </div>
+    </div>
+    <div class="footer" id="data">
+      <p>
+        <a
+          class="in-text"
+          target="_blank"
+          href="https://data.cityofchicago.org/Transportation/Traffic-Crashes-Crashes/85ca-t3if/about_data"
+          >Traffic Crashes Dataset</a
+        >
+        <br />
+        <a
+          class="in-text"
+          target="_blank"
+          href="https://data.cityofchicago.org/Parks-Recreation/Beach-Weather-Stations-Automated-Sensors/k7hf-8y75/about_data"
+          >Precipitation Dataset</a
+        >
+      </p>
+    </div>
+  </body>
+</html>
