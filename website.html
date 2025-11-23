@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/body.css" />
     <link rel="stylesheet" href="styles/buttons.css" />
+    <link rel="stylesheet" href="styles/slider.css" />
+
+    <!-- js files -->
+    <script src="slider.js" defer></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -62,7 +66,7 @@
       <div class="content-left">
         <div class="box">
           <iframe
-            src="plots/crashes_chart.html"
+            src="plots/plot1.html"
             width="100%"
             height="100%"
             frameborder="0"
@@ -72,9 +76,68 @@
       </div>
 
       <div class="content-right">
-        <p>description</p>
+        <h2>Average Hourly Crashes</h2>
       </div>
     </div>
+
+    <div class="content">
+      <div class="content-left">
+        <h2>Crashes Conditioned on Weather</h2>
+        <p>
+          (Note: This graph assumes similar amount of traffic on clear and rainy days, which may
+          underestimate the effect of rain on crashes.)
+        </p>
+      </div>
+      <div class="content-right">
+        <div class="box">
+          <iframe
+            src="plots/plot2.html"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            style="border: none"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-alt-title">
+      <h2>Linear Regression</h2>
+    </div>
+    <div class="content-alt">
+      <iframe
+        src="plots/plot3.html"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        style="border: none"
+      ></iframe>
+      <iframe
+        src="plots/plot4.html"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        style="border: none"
+      ></iframe>
+    </div>
+
+    <div class="content">
+      <div class="content-left">
+        <div class="box">
+          <iframe
+            src="plots/plot5.html"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            style="border: none"
+          ></iframe>
+        </div>
+      </div>
+      <div class="content-right">
+        <h2>Violin Plot</h2>
+      </div>
+    </div>
+
     <div class="footer" id="data">
       <p>
         <a
