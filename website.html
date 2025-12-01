@@ -91,6 +91,31 @@
     <div class="block" id="findings">
       <div class="content">
         <div class="content-left">
+          <h2>General Trend</h2>
+          <p>
+            There's a clear seasonal pattern over the last 7 years, with more crashes during the
+            summer months than the winter months. The only notable abnormality is 2020 due to
+            Covid.
+            <br />
+            <br />
+            (October 2025 has a low crash count because the dataset only included data up until
+            October 24, 2025)
+          </p>
+        </div>
+        <div class="content-right">
+          <div class="box">
+            <iframe
+              src="plots/plot0.html"
+              width="100%"
+              height="400px"
+              frameborder="0"
+              style="border: none"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content-left">
           <div class="box">
             <iframe
               src="plots/plot1.html"
@@ -189,19 +214,21 @@
     </div>
 
     <div class="footer" id="data">
-      <p>
+      <p style="color: grey">
+        <b>Source:</b> <i>Chicago Data Portal</i>, Traffic Crashes - Crashes.
         <a
           class="in-text"
           target="_blank"
           href="https://data.cityofchicago.org/Transportation/Traffic-Crashes-Crashes/85ca-t3if/about_data"
-          >Traffic Crashes Dataset</a
+          >Link</a
         >
         <br />
+        <b>Source:</b> <i>Chicago Data Portal</i>, Beach Weather Stations - Automated Sensors.
         <a
           class="in-text"
           target="_blank"
           href="https://data.cityofchicago.org/Parks-Recreation/Beach-Weather-Stations-Automated-Sensors/k7hf-8y75/about_data"
-          >Precipitation Dataset</a
+          >Link</a
         >
       </p>
     </div>

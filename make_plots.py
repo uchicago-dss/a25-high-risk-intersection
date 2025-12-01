@@ -5,6 +5,74 @@ import numpy as np
 
 ####################### Import Dataset #######################
 data = pd.read_pickle('dataset.pkl')
+unmerged = pd.read_pickle('full_dataset.pkl')
+
+
+####################### Plot 0 #######################
+df = unmerged.copy()
+df['CRASH_DATE'] = pd.to_datetime(df['CRASH_DATE'])
+
+# Remove October 24, 2025
+df = df[df['CRASH_DATE'].dt.date != pd.to_datetime('2025-10-24').date()]
+
+daily_crashes = (
+    df.groupby(df['CRASH_DATE'].dt.date)['CRASH_RECORD_ID']
+      .count()
+      .reset_index()
+)
+daily_crashes.columns = ['date', 'crash_count']
+
+monthly_crashes = (
+    df.groupby(df['CRASH_DATE'].dt.to_period('M'))['CRASH_RECORD_ID']
+      .count()
+      .reset_index()
+)
+monthly_crashes.columns = ['month', 'crash_count']
+monthly_crashes['month'] = monthly_crashes['month'].dt.to_timestamp()
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(
+    x=daily_crashes['date'],
+    y=daily_crashes['crash_count'],
+    mode='lines',
+    line=dict(color='coral', width=1),
+    name='Daily Crashes',
+    hovertemplate='%{x|%Y-%m-%d}<br>Crashes: %{y}<extra></extra>'
+))
+
+fig.add_trace(go.Scatter(
+    x=monthly_crashes['month'],
+    y=monthly_crashes['crash_count'],
+    mode='lines+markers',
+    line=dict(color='rgba(255,140,0,0.6)', width=3),
+    marker=dict(size=8, color='rgba(255,140,0,0.6)'),
+    name='Monthly Crashes',
+    hovertemplate='%{x|%b %Y}<br>Crashes: %{y}<extra></extra>'
+))
+
+fig.update_layout(
+    title='Daily and Monthly Traffic Crashes',
+    xaxis_title='Date',
+    yaxis_title='Crash Count',
+    plot_bgcolor='white',
+    paper_bgcolor='white',
+    xaxis=dict(showgrid=True, gridcolor='lightgray'),
+    yaxis=dict(showgrid=True, gridcolor='lightgray'),
+    width=580,
+    height=380,
+    legend=dict(orientation='h', y=-0.2, x=0.5,
+                xanchor='center', yanchor='top')
+)
+
+fig.update_xaxes(
+    dtick="M12",
+    tickformat="%Y",
+    tickangle=0
+)
+
+fig.write_html("plots/plot0.html")
+
 
 ####################### Plot 1 #######################
 df = data.copy()
