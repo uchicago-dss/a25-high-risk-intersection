@@ -39,7 +39,9 @@ h2 {
 }
 
 p,
-a {
+a,
+ul,
+li {
   font-family: 'SN Pro';
   font-weight: 400;
   font-size: 18px;
